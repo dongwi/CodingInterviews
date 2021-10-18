@@ -16,8 +16,11 @@ func Solution(input [][]int, target int) bool {
 func Solution2(input [][]int, target int) bool {
 	// 选择左下角元素, i 表示纵向index，j表示横向index
 	i := len(input)
+	if i == 0 {
+		return false
+	}
 	j := 0
-	for i > 0 && j < len(input[0]) {
+	for i >= 0 && j < len(input[0]) {
 		ele := input[i][j]
 		if ele < target {
 			i--
